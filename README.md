@@ -65,7 +65,7 @@ Clique no botão “Criar” para adicionar uma nova conexão.
 É necessário configurar este arquivo com as informações da sua Service Account do Google Cloud e outras configurações de conexão com o BigQuery.
 Exemplo de configuração para o BigQuery.
   profiles.yml
-      projeto_dbt:
+     ``` projeto_dbt
        target: dev
        outputs:
         dev:
@@ -76,10 +76,10 @@ Exemplo de configuração para o BigQuery.
           threads: [NUMERO_DE_THREADS]
           keyfile: [CAMINHO_PARA_SUA_SERVICE_ACCOUNT_JSON]
           timeout_seconds: 300
-          location: [LOCALIZACAO_DO_DATASET] # ex: US
+          location: [LOCALIZACAO_DO_DATASET] # ex: US```
   
   - Teste a conexão (verificando se o dbt consegue se conectar ao Bigquery):
-      dbt debug
+     ```dbt debug```
   Deverá aparecer uma imagem, como a mostrada abaixo:
 
   
