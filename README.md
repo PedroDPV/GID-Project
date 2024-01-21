@@ -81,6 +81,8 @@ Exemplo de configuração para o BigQuery.
   
   - Teste a conexão (verificando se o dbt consegue se conectar ao Bigquery):
      ```dbt debug```
+
+    
   Deverá aparecer uma imagem, como a mostrada abaixo:
 
   
