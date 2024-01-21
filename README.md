@@ -14,7 +14,7 @@ Antes de começar, é necessário ter um projeto dbt configurado e pronto para s
 
 # Integração do dbt com o Airflow
 Passo 1: Configurar o Projeto dbt
-Certifique-se de que o seu projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao seu data warehouse.
+Certifique-se de que projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao seu data warehouse.
 
 # Passo 2: Criar Modelos dbt
 Os modelos dbt definem as transformações SQL que você deseja aplicar aos seus dados. Crie modelos dbt no diretório models do seu projeto.
