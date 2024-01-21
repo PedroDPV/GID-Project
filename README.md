@@ -23,8 +23,9 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 
 
 ## Integração do dbt com o Airflow
-    sudo pip install dbt
-    sudo pip install apache-airflow
+    ```pip install 'apache-airflow[google]'```
+    ```pip install apache-airflow[celery]==2.8.1 --constraint https://raw.githubusercontent.com/apache/airflow/constraints-2.8.1/constraints-3.8.txt```
+    ```sudo pip install dbt```
     
 ## Inicializar o Airflow databse
     airflow db init
@@ -235,18 +236,17 @@ with DAG('data_transformation_dag', default_args=default_args, schedule_interval
     loaded_csv_file_path >> load_csv_to_bq_task >> dbt_run_task
   ```
   ## Inseririndo a dag na pasta do Airflow
-  Certifíque-se de que a pasta do airflow contem uma outra pasta chamada "dag" para que passamos enviar nosso arquivo .py para la.
+  Certifíque-se de que a pasta do airflow contem uma outra pasta chamada "dag" para que passamos enviar nosso arquivo .py para la,
   lembre-se de que se a pasta não existir, voce precisará cria-la.
+  Navege até a pasta do airflow e execute o comando abaixo:
+  ```mkdir dags```
   
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/869842aa-0449-4a04-9640-fe3e23e1c77b)
   
 
-  
-  # Passo 6: Configurar Dependências
-  Defina as dependências entre as tarefas do dbt e outras tarefas no Airflow para garantir que sejam executadas na ordem correta.
-
   # Passo 7: Executar a DAG
   Ative e execute a sua DAG no Airflow para testar a automação completa do seu pipeline de dados.
+  Lembre-se de que o arquivo Json com as credenciais devem estar no seu ambiente virtual.
 
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/56208b15-0eb0-4a73-80b6-65d162e9d95e)
 
