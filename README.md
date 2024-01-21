@@ -12,16 +12,35 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 - Configuração Inicial
 - OBS.: Antes de começar, é necessário ter um projeto dbt configurado e pronto para ser executado. Além disso, seu ambiente Airflow deve estar configurado e operacional.
 
-# Integração do dbt com o Airflow
+- Integração do dbt com o Airflow
     pip install dbt
     pip install apache-airflow
     
-# Inicializar o Airflow databse
+- Inicializar o Airflow databse
     airflow db init
-# Inicializar o Airflow webserver e o scheduler
+  
+- Inicializar o Airflow webserver e o scheduler
     airflow webserver --port 8080
     airflow scheduler
-    
+
+## Abra a Interface Web do Airflow
+
+Acesse http://localhost:8080 no navegador.
+
+## Acesse as Conexões
+
+Clique em “Admin” no menu superior e selecione “Conexões”.
+
+## Adicione uma Nova Conexão
+
+Clique no botão “Criar” para adicionar uma nova conexão.
+
+## Preencha os Detalhes da Conexão
+
+- **Conn Id**: Insira um ID único para a conexão (por exemplo, “bigquery_conn”).
+- **Conn Type**: Selecione “Google Cloud Platform”.
+- **Login**: Insira o e-mail da sua conta de serviço do Google Cloud.
+- **Senha**: Insira a chave da sua conta de serviço do Google Cloud (formato JSON).
   
   # Passo 1: Configurar o Projeto dbt
   Certifique-se de que projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao seu data warehouse.
