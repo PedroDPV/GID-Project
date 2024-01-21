@@ -241,12 +241,23 @@ with DAG('data_transformation_dag', default_args=default_args, schedule_interval
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/56208b15-0eb0-4a73-80b6-65d162e9d95e)
 
 # O que deve acontecer no final disso tudo?
-Um processo no Airflow para rodar o projeto DBT, que aparecerá, conforme a imagem abaixo, no BigQuery:
+
+Como consequência do sucesso na execução da DAG, um processo no Airflow criará um pipeline onde primeiro haverá a extração do arquivo  com as informações que popularão a nossa tabela no bigquery e uma limpeza prévia dos dados.
+A segunda etapa será de carregamento no nosso ambiente coud (Load), onde haverá um upload do dataframe no GCS (Google cloud storage) e posteriormente exportado para o nosso Data Wharehouse, que no caso será o BigQuery.
+Por último devo explicar a fase de transformação e análise dos dados que serão representados nas imagens a seguir :
+
 
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/4633aa9a-f566-4539-9cfd-ad5a4f5c61b1)
 
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/28134594-fd5b-40a4-9176-714e0615bac3)
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/af0902f1-5439-4e35-83d9-d21728ca05cb)
+
+Como conclusão desse pipeline deveríamos atingir os seguintes objetivos:
+-Obter os valores agrupados de vendas por UF.
+    este objetivo foi facílmente alcançado após a execução da query logo ácima, onde evidenciamos a quantidade de venda por bandeira de cartão em cada UF, bem como o seu número total.
+-Valores de vendas médias por dia.
+    já este, não será possível se levar-mos em consideração a massa de dados aplicada para este exercício, pois não contem as informações que seriam obrigatórias como o valor das vendas propriamente dito e algum     formato de timestamp que seria utilizado para agrupar por data e chegar na conclusão das vendas médias por dia.
+    
 
 
 
