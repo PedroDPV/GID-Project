@@ -240,7 +240,7 @@ with DAG('data_transformation_dag', default_args=default_args, schedule_interval
     loaded_csv_file_path = load_data(cleaned_csv_file_path)
     loaded_csv_file_path >> load_csv_to_bq_task >> dbt_run_task
   ```
-  ## Inseririndo a dag na pasta do Airflow
+  ## Inserindo a dag na pasta do Airflow
   Certifíque-se de que a pasta do airflow contem uma outra pasta chamada "dag" para que passamos enviar nosso arquivo .py para la,
   lembre-se de que se a pasta não existir, voce precisará cria-la.
   Navege até a pasta do airflow e execute o comando abaixo:
