@@ -241,25 +241,25 @@ with DAG('data_transformation_dag', default_args=default_args, schedule_interval
     loaded_csv_file_path >> load_csv_to_bq_task >> dbt_run_task
   ```
   ## Inserindo a dag na pasta do Airflow
-  Certifíque-se de que a pasta do airflow contem uma outra pasta chamada "dag" para que passamos enviar nosso arquivo .py para la,
-  lembre-se de que se a pasta não existir, voce precisará cria-la.
-  Navege até a pasta do airflow e execute o comando abaixo:
+  Certifíque-se de que a pasta do airflow contém uma outra pasta chamada "dag" para que possamos enviar nosso arquivo .py para lá,
+  lembre-se de que se a pasta não existir, voce precisará criá-la.
+  Navege até a pasta airflow e execute o comando abaixo:
   ```mkdir dags```
   
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/869842aa-0449-4a04-9640-fe3e23e1c77b)
   
 
   # Passo 7: Executar a DAG
-  Ative e execute a sua DAG no Airflow para testar a automação completa do seu pipeline de dados.
-  Lembre-se de que o arquivo Json com as credenciais devem estar no seu ambiente virtual.
+  Ative e execute a DAG no Airflow para testar a automação completa do pipeline de dados.
+  Lembre-se de que o arquivo Json com as credenciais devem estar no ambiente virtual.
 
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/56208b15-0eb0-4a73-80b6-65d162e9d95e)
 
 # Resultado Final do Processo de Orquestração de Dados
 
-Como consequência do sucesso na execução da DAG, um processo no Airflow criará um pipeline onde primeiro haverá a extração do arquivo  com as informações que popularão a nossa tabela no bigquery e uma limpeza prévia dos dados.
-A segunda etapa será de carregamento no nosso ambiente coud (Load), onde haverá um upload do dataframe no GCS (Google cloud storage) e posteriormente exportado para o nosso Data Wharehouse, que no caso será o BigQuery.
-Por último devo explicar a fase de transformação e análise dos dados que serão representados nas imagens a seguir :
+Como consequência do sucesso na execução da DAG, um processo no Airflow criará um pipeline onde primeiro haverá a extração do arquivo, com as informações que popularão a tabela no bigquery e uma limpeza prévia dos dados.
+A segunda etapa será de carregamento (LOAD) no ambiente Google Cloud, onde haverá um upload do dataframe no GCS (Google Cloud Storage) e posteriormente exportado para o Data Wharehouse, que no caso será o BigQuery.
+Por último, devo explicar a fase de transformação e análise dos dados que serão representados nas imagens a seguir :
 
 
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/4633aa9a-f566-4539-9cfd-ad5a4f5c61b1)
@@ -268,15 +268,10 @@ Por último devo explicar a fase de transformação e análise dos dados que ser
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/af0902f1-5439-4e35-83d9-d21728ca05cb)
 
 # Conclusão
-Como conclusão desse pipeline deveríamos atingir os seguintes objetivos:
+Como conclusão desse pipeline deve-se atingir os seguintes objetivos:
 
 ## Obter os valores agrupados de vendas por UF.
-este objetivo foi facílmente alcançado após a execução da query logo ácima, onde evidenciamos a quantidade de venda por bandeira de cartão em cada UF, bem como o seu número total.
+Esse objetivo foi facilmente alcançado após a execução da query logo acima, onde ficou evidenciado a quantidade de venda por bandeira de cartão em cada UF, bem como o seu número total.
     
 ## Valores de vendas médias por dia.
-já este, não será possível se levarmos em consideração a massa de dados aplicada para este exercício, pois não contem as informações que seriam obrigatórias como o valor das vendas propriamente dito e algum     formato de timestamp que seria utilizado para agrupar por data e chegar na conclusão das vendas médias por dia.
-    
-
-
-
-
+Já esse, não será possível se levarmos em consideração a massa de dados aplicada para este exercício, pois, não contém as informações que seriam obrigatórias como por exemplo: o valor das vendas e algum formato de timestamp que seria utilizado para agrupar por data e chegar na conclusão das vendas médias por dia.
