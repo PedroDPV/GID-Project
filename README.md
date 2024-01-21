@@ -44,7 +44,7 @@ Clique no botão “Criar” para adicionar uma nova conexão.
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/5aa0dfa9-ef1b-4524-a075-7bfe43714dae)
 
   # Passo 1: Configurar o Projeto dbt
-  Certifique-se de que projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao seu data warehouse (que no caso será o bigquery).
+  Certifique-se de que o projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao data warehouse (no caso deste projeto, será o bigquery).
   ##  Execute o comando:
       dbt init projeto_dbt
   ##  Navegue até a Pasta do Projeto DBT:
@@ -91,9 +91,9 @@ Isso criará uma nova estrutura de projeto dbt com as configurações iniciais.
 ## c. Criar o Modelo dbt:
    - No diretório do seu projeto dbt, navegue até a pasta models:
         ```cd models```
-   - Crie um novo arquivo .sql para o seu modelo dbt usando um editor de texto como o nano ou vim:
+   - Crie um novo arquivo .sql para o modelo dbt usando um editor de texto como o nano ou vim:
         ```nano cleaned_fakenames.sql```
-- Escreva o SQL para o modelo conforme mostrado anteriormente.
+- Escreva o SQL para o modelo.
 
 ```
 SELECT
@@ -123,7 +123,7 @@ FROM
 
 - Compile o código
       ```dbt compile```
-- Para testar o modelo dbt, você pode usar o terminal integrado do VSCode para navegar até a pasta do seu projeto dbt e executar dbt run para compilar e executar todos os modelos, ou ```dbt run --models  cleaned_fakenames``` para executar apenas o modelo específico.
+- Para rodar o modelo dbt use ```dbt run --models  cleaned_fakenames``` para executar apenas o modelo específico no WSL.
 
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/f97d4d82-526e-4c29-aaaf-9bd592fbcf6d)
 
@@ -154,7 +154,6 @@ default_args = {
 
 credential_path = '/home/pedrodpv/terraform-366517-733b2d955a83.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
-
 
 with DAG('data_transformation_dag', default_args=default_args, schedule_interval='@daily', catchup=False) as dag:
 
