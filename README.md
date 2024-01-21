@@ -10,7 +10,7 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 - Instalação do dbt configurada para uso com o BigQuery
 - Instalação do Apache Airflow
 - Configuração Inicial
-- OBS.: Antes de começar, é necessário ter um projeto dbt configurado e pronto para ser executado. Além disso, seu ambiente Airflow deve estar configurado e operacional.
+- OBS.: Antes de começar, é necessário ter um projeto dbt configurado em ambiente Linux, no caso deste projeto específico foi utilizado o ambiente WSL dentro do Windows.
 
 ## Integração do dbt com o Airflow
     pip install dbt
@@ -44,7 +44,36 @@ Clique no botão “Criar” para adicionar uma nova conexão.
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/5aa0dfa9-ef1b-4524-a075-7bfe43714dae)
 
   # Passo 1: Configurar o Projeto dbt
-  Certifique-se de que projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao seu data warehouse.
+  Certifique-se de que projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao seu data warehouse (que no caso será o bigquery).
+  ##  Execute o comando:
+      dbt init projeto_dbt
+  ##  Navegue até a Pasta do Projeto DBT:
+      cd projeto_dbt
+  ## Configure o profiles.yml:
+  O arquivo profiles.yml é onde você define a conexão com o seu banco de dados. Normalmente, ele fica localizado em ~/.dbt/.
+Você precisa configurar este arquivo com as informações da sua Service Account do Google Cloud e outras configurações de conexão com o BigQuery.
+Exemplo de configuração para o BigQuery.
+  ## yaml:
+      projeto_dbt:
+       target: dev
+       outputs:
+        dev:
+          type: bigquery
+          method: service-account
+          project: [SEU_PROJECT_ID]
+          dataset: [SEU_DATASET]
+          threads: [NUMERO_DE_THREADS]
+          keyfile: [CAMINHO_PARA_SUA_SERVICE_ACCOUNT_JSON]
+          timeout_seconds: 300
+          location: [LOCALIZACAO_DO_DATASET] # ex: US
+  ## Teste a conexão (verificando se o dbt consegue se conectar ao Bigquery):
+      dbt debug
+  deve aparecer algo como o print a seguir
+  ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/ab00f79e-d764-4b33-9423-1d89f3c42bc9)
+
+
+  
+![image](https://github.com/PedroDPV/GID-Project/assets/103441250/d1993ad5-07fb-497b-bd5d-a500e4f7a3e6)
 
   # Passo 2: Criar Modelos dbt
   Os modelos dbt definem as transformações SQL que você deseja aplicar aos seus dados. Crie modelos dbt no diretório models do seu projeto.
