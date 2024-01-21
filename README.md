@@ -50,8 +50,8 @@ Clique no botão “Criar” para adicionar uma nova conexão.
   ##  Navegue até a Pasta do Projeto DBT:
       cd projeto_dbt
   ## Configure o profiles.yml:
-  O arquivo profiles.yml é onde você define a conexão com o seu banco de dados. Normalmente, ele fica localizado em ~/.dbt/.
-Você precisa configurar este arquivo com as informações da sua Service Account do Google Cloud e outras configurações de conexão com o BigQuery.
+  O arquivo profiles.yml é onde é feita a definição da conexão com o seu banco de dados. Normalmente, ele fica localizado em ~/.dbt/.
+É necessário configurar este arquivo com as informações da sua Service Account do Google Cloud e outras configurações de conexão com o BigQuery.
 Exemplo de configuração para o BigQuery.
   ## yaml:
       projeto_dbt:
@@ -73,7 +73,8 @@ Exemplo de configuração para o BigQuery.
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/ab00f79e-d764-4b33-9423-1d89f3c42bc9)
 
   # Passo 2: Criar Modelos dbt
-  Os modelos dbt definem as transformações SQL que você deseja aplicar aos seus dados. Crie modelos dbt no diretório models do seu projeto.
+  - Os modelos dbt definem as transformações SQL que se deseja aplicar aos dados.
+  - Crie modelos dbt no diretório models do  projeto.
 
   ## a. Instalar o dbt (se ainda não estiver instalado, com o adaptador para BigQuery):
         pip install dbt-bigquery
@@ -82,7 +83,9 @@ Exemplo de configuração para o BigQuery.
       ```cd /caminho/para/seu/projeto_dbt```
   - Se ainda não tem um projeto dbt, crie um executando:
       ```dbt init seu_nome_de_projeto_dbt```
+
 Isso criará uma nova estrutura de projeto dbt com as configurações iniciais.
+
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/a2a8bdbc-0600-4feb-a65b-2932db133144)
 
 ## c. Criar o Modelo dbt:
