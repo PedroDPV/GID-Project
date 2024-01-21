@@ -224,12 +224,19 @@ with DAG('data_transformation_dag', default_args=default_args, schedule_interval
     loaded_csv_file_path = load_data(cleaned_csv_file_path)
     loaded_csv_file_path >> load_csv_to_bq_task >> dbt_run_task
   ```
+  ## Inseririndo a dag na pasta do Airflow
+  Certifíque-se de que a pasta do airflow contem uma outra pasta chamada "dag" para que passamos enviar nosso arquivo .py para la.
+  lembre-se de que se a pasta não existir, voce precisará cria-la.
+  
+  ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/869842aa-0449-4a04-9640-fe3e23e1c77b)
+  
 
+  
   # Passo 6: Configurar Dependências
   Defina as dependências entre as tarefas do dbt e outras tarefas no Airflow para garantir que sejam executadas na ordem correta.
 
   # Passo 7: Executar a DAG
-  Ative e execute o seu DAG no Airflow para testar a automação completa do seu pipeline de dados.
+  Ative e execute a sua DAG no Airflow para testar a automação completa do seu pipeline de dados.
 
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/56208b15-0eb0-4a73-80b6-65d162e9d95e)
 
