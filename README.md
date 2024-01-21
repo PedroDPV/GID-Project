@@ -252,11 +252,13 @@ Por último devo explicar a fase de transformação e análise dos dados que ser
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/28134594-fd5b-40a4-9176-714e0615bac3)
 ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/af0902f1-5439-4e35-83d9-d21728ca05cb)
 
+# Conclusão
 Como conclusão desse pipeline deveríamos atingir os seguintes objetivos:
 
-##Obter os valores agrupados de vendas por UF.
+## Obter os valores agrupados de vendas por UF.
     este objetivo foi facílmente alcançado após a execução da query logo ácima, onde evidenciamos a quantidade de venda por bandeira de cartão em cada UF, bem como o seu número total.
-##Valores de vendas médias por dia.
+    
+## Valores de vendas médias por dia.
     já este, não será possível se levar-mos em consideração a massa de dados aplicada para este exercício, pois não contem as informações que seriam obrigatórias como o valor das vendas propriamente dito e algum     formato de timestamp que seria utilizado para agrupar por data e chegar na conclusão das vendas médias por dia.
     
 
