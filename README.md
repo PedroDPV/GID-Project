@@ -38,7 +38,7 @@ Clique no botão “Criar” para adicionar uma nova conexão.
 ## Preencha os Detalhes da Conexão
 
 - **Conn Id**: Insira um ID único para a conexão (por exemplo, “bigquery_conn”).
-- **Conn Type**: Selecione “Google Cloud Platform”.
+- **Conn Type**: Selecione “Google BigQuery”.
 - **Login**: Insira o e-mail da sua conta de serviço do Google Cloud.
 - **Senha**: Insira a chave da sua conta de serviço do Google Cloud (formato JSON).
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/5aa0dfa9-ef1b-4524-a075-7bfe43714dae)
