@@ -31,7 +31,7 @@ Acesse http://localhost:8080 no navegador.
 
 Clique em “Admin” no menu superior e selecione “Conexões”.
 
-## Adicione uma Nova Conexão
+## Adicione uma Nova Conexão (SE NÃO HOUVER)
 
 Clique no botão “Criar” para adicionar uma nova conexão.
 
