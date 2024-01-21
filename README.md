@@ -11,6 +11,13 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 - Instalação do Apache Airflow
 - Configuração Inicial
 - OBS.: Antes de começar, é necessário ter um projeto dbt configurado em ambiente Linux, no caso deste projeto específico foi utilizado o ambiente WSL dentro do Windows.
+  
+## Comandos iniciais
+    sudo apt update
+    sudo apt install python3-pip   
+
+![image](https://github.com/PedroDPV/GID-Project/assets/103441250/3841b5da-be15-4b26-bf77-93a7f1d91270)
+
 
 ## Integração do dbt com o Airflow
     pip install dbt
