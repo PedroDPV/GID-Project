@@ -76,7 +76,8 @@ Exemplo de configuração para o BigQuery.
           threads: [NUMERO_DE_THREADS]
           keyfile: [CAMINHO_PARA_SUA_SERVICE_ACCOUNT_JSON]
           timeout_seconds: 300
-          location: [LOCALIZACAO_DO_DATASET] # ex: US```
+          location: [LOCALIZACAO_DO_DATASET] # ex: US
+     ```
   
   - Teste a conexão (verificando se o dbt consegue se conectar ao Bigquery):
      ```dbt debug```
