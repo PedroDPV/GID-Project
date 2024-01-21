@@ -64,7 +64,7 @@ Clique no botão “Criar” para adicionar uma nova conexão.
   O arquivo profiles.yml é onde é feita a definição da conexão com o seu banco de dados. Normalmente, ele fica localizado em ~/.dbt/.
 É necessário configurar este arquivo com as informações da sua Service Account do Google Cloud e outras configurações de conexão com o BigQuery.
 Exemplo de configuração para o BigQuery.
-  ## yaml:
+  profiles.yml
       projeto_dbt:
        target: dev
        outputs:
@@ -77,9 +77,11 @@ Exemplo de configuração para o BigQuery.
           keyfile: [CAMINHO_PARA_SUA_SERVICE_ACCOUNT_JSON]
           timeout_seconds: 300
           location: [LOCALIZACAO_DO_DATASET] # ex: US
-  ## Teste a conexão (verificando se o dbt consegue se conectar ao Bigquery):
+  
+  - Teste a conexão (verificando se o dbt consegue se conectar ao Bigquery):
       dbt debug
   Deverá aparecer uma imagem, como a mostrada abaixo:
+
   
   ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/ab00f79e-d764-4b33-9423-1d89f3c42bc9)
 
