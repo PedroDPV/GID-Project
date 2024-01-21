@@ -12,14 +12,14 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 - Configuração Inicial
 - OBS.: Antes de começar, é necessário ter um projeto dbt configurado e pronto para ser executado. Além disso, seu ambiente Airflow deve estar configurado e operacional.
 
-- Integração do dbt com o Airflow
+## Integração do dbt com o Airflow
     pip install dbt
     pip install apache-airflow
     
-- Inicializar o Airflow databse
+## Inicializar o Airflow databse
     airflow db init
   
-- Inicializar o Airflow webserver e o scheduler
+  ## Inicializar o Airflow webserver e o scheduler
     airflow webserver --port 8080
     airflow scheduler
 
