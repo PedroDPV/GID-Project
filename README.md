@@ -41,7 +41,8 @@ Clique no botão “Criar” para adicionar uma nova conexão.
 - **Conn Type**: Selecione “Google Cloud Platform”.
 - **Login**: Insira o e-mail da sua conta de serviço do Google Cloud.
 - **Senha**: Insira a chave da sua conta de serviço do Google Cloud (formato JSON).
-  
+  ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/5aa0dfa9-ef1b-4524-a075-7bfe43714dae)
+
   # Passo 1: Configurar o Projeto dbt
   Certifique-se de que projeto dbt esteja configurado corretamente, com um arquivo profiles.yml que define como o dbt se conecta ao seu data warehouse.
 
