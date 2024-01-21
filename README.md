@@ -23,7 +23,7 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 
 
 ## Integração do dbt com o Airflow
-    ```pip install 'apache-airflow[google]'```
+    ```pip install 'apache-airflow[google]```
     ```pip install apache-airflow[celery]==2.8.1 --constraint https://raw.githubusercontent.com/apache/airflow/constraints-2.8.1/constraints-3.8.txt```
     ```sudo pip install dbt```
     
@@ -64,7 +64,7 @@ Clique no botão “Criar” para adicionar uma nova conexão.
   O arquivo profiles.yml é onde é feita a definição da conexão com o seu banco de dados. Normalmente, ele fica localizado em ~/.dbt/.
 É necessário configurar este arquivo com as informações da sua Service Account do Google Cloud e outras configurações de conexão com o BigQuery.
 Exemplo de configuração para o BigQuery.
-  profiles.yml
+  
      ``` projeto_dbt
        target: dev
        outputs:
