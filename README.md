@@ -10,8 +10,11 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 - Instalação do dbt configurada para uso com o BigQuery
 - Instalação do Apache Airflow
 - Configuração Inicial
+- Execução do projeto em ambiente virtual para evitar conflitos na instalação
 - OBS.: Antes de começar, é necessário ter um projeto dbt configurado em ambiente Linux, no caso deste projeto específico foi utilizado o ambiente WSL dentro do Windows.
-  
+
+  ![image](https://github.com/PedroDPV/GID-Project/assets/103441250/0acc33f5-8258-40a0-aec2-8b03aeb14d6a)
+
 ## Comandos iniciais
     sudo apt update
     sudo apt install python3-pip   
@@ -20,8 +23,8 @@ O dbt (data build tool) é uma ferramenta de linha de comando que permite que eq
 
 
 ## Integração do dbt com o Airflow
-    pip install dbt
-    pip install apache-airflow
+    sudo pip install dbt
+    sudo pip install apache-airflow
     
 ## Inicializar o Airflow databse
     airflow db init
